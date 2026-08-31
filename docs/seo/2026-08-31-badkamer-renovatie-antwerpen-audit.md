@@ -1349,3 +1349,43 @@ Collect these before or shortly after relaunch. Ordered by impact.
 **Strategic (with the agency)**
 - [ ] Status of the sibling microsites (Deurne, Merksem, Borgerhout, Berchem) — keep-and-differentiate, canonicalise, or consolidate?
 - [ ] Server access for the 301 redirect and redirect-hygiene tasks.
+
+---
+
+## Appendix B — Verification log (branch `seo-rebuild-antwerpen`)
+
+Run 2026-08-31 after all page rebuilds.
+
+| # | Acceptance check | Command / method | Result |
+|---|------------------|------------------|--------|
+| 1 | All 18 sections present, tables populated, no "TBD" | manual read | **Pass** |
+| 2 | Every `[FACT REQUIRED]` marker names the fact + placement | manual read + §Appendix A checklist | **Pass** |
+| 3 | No `amsterdam / nijmegen / lent / wijchen / beuningen / groesbeek / arnhem / de pijp / ijburg` outside intentional context | `grep -rniE` over `*.html` (excl. Avant Garde HQ mention) | **Pass** — 0 hits |
+| 4 | No `lang="en-US"` / `og:locale=en_US` / `inLanguage:"en-US"`; no concatenated `Antwerpen<word>` tokens | `grep -rnE` | **Pass** — only remaining token is the valid Dutch adjective "Antwerpense"; the only `en_US` left is Elementor Pro's `facebook_sdk.lang` JS config string (third-party, not a page language signal) |
+| 5 | Each rebuilt page: exactly one `<h1>`; JSON-LD parses | `grep -oE '<h1[ >]'` + `python json.loads` on every `<script type="application/ld+json">` | **Pass** — 1 `<h1>` per page (8/8); all JSON-LD blocks parse (index 2, faq 2, toilet 2, others 1) |
+| 6 | `toilet-renovatie-antwerpen/` exists, `index,follow`, linked in footers; `toilet-renovatie-nijmegen/` removed | `ls`, `grep -rl`, robots meta | **Pass** — dir `git rm`'d; new page `index, follow`; linked from all 5 other content pages + nav + sitemap; 301 documented in §11 (host task) |
+| 7 | `robots.txt` + `sitemap.xml` present and valid | `test -f`, `xml.dom.minidom.parse` | **Pass** — sitemap lists 8 canonical HTTPS URLs |
+| 8 | No claim of reviews / ratings / project counts / years / certifications without a filled `[FACT REQUIRED]` or cited source | `grep -rniE '15\+? ?jaar\|500\+\|klantwaardering\|gecertificeerd\|>5\.0'` | **Pass** — 0 visible hits; fake Google-review badges and stat blocks removed on every page |
+| 9 | Home and `/faq` share no verbatim FAQ answers | extract `<div ... aria-labelledby>` answer text from both, set-intersect | **Pass** — 0 shared answers |
+| 10 | Work committed in reviewable page-by-page commits on `seo-rebuild-antwerpen` | `git log --oneline` | **Pass** — 1 commit per audit section + 1 per page rebuild + sitewide + artifact link |
+| — | Mojibake (`efficiÃ«nt`, `âœ“`, lorem ipsum) removed from visible text | `grep -rnoE` | **Pass** — 0 hits |
+| — | No internal links to removed paths (`toilet-renovatie-nijmegen`, `home/`) | `grep -rnoE 'href="[^"]*(toilet-renovatie-nijmegen|/home/)'` | **Pass** — 0 hits |
+| — | Files remain UTF-8 with BOM | `file *.html` | **Pass** — BOM retained on every page (line endings normalised to CRLF in the working tree; git stores LF) |
+
+### §18 originality test — recorded outcome
+
+All eight rebuilt/new pages **pass** questions 1, 2, 3, 5, 6, 9, 10 (independent architecture,
+headings, arguments, examples, CTAs; unique customer value; no unnecessary similarity;
+substantially better than a synonym rewrite). Question 7 ("genuine info about *this*
+business") is **partial** on P1/P3/P4/P5 and the legal pages — the gap is the open
+`[FACT REQUIRED]` items in Appendix A, not an originality failure. Two sections were
+reworked mid-audit (P1's step section away from the template's "4 stappen"; P1's cost
+answer reduced so it no longer overlaps P4).
+
+### Known follow-ups not resolvable from a static mirror
+
+- Server-side **301** for `/toilet-renovatie-nijmegen/` → `/toilet-renovatie-antwerpen/`, plus http→https / trailing-slash / non-www consolidation (§11 T5, T15, T16).
+- Elementor form: add the qualifying fields (type werk / woningtype / district / periode) and a `/contact/bedankt/` thank-you URL in the Elementor editor; the labels and intent copy are in place.
+- Cross-network duplication decision with the agency (§11 T18).
+- Legal review of `/privacy-policy/` and `/algemene-voorwaarden/` (banners in place).
+- `img/WhatsApp-Image-*` filenames stay non-descriptive; rename on next asset update (§11 T11).
