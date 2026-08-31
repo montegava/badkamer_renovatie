@@ -3,7 +3,7 @@
 **Prepared:** 2026-08-31
 **Site audited:** `https://badkamerrenovatie.montegava.com/` (static mirror in this repository)
 **Scope:** Full strategic audit + first-principles rebuild of all real pages
-**Published version (interactive):** _Artifact URL added in section header after publication_
+**Published version (interactive summary):** https://claude.ai/code/artifact/62c5a338-9a87-40ce-a818-8dbc693199a6
 
 > **Method note.** This document treats the current site as a *dataset about a
 > business*, not as a template to preserve. Every rebuilt page below was
