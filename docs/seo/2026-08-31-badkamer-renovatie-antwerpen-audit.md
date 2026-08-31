@@ -933,3 +933,419 @@ Do now (no legal judgement needed):
 Do NOT (needs a lawyer): rewrite the substantive clauses, assert specific
 retention periods, warranty scope, payment/withdrawal terms, or dispute
 resolution. `AboutPage`/`WebPage` schema: fix `name` + `inLanguage` only.
+
+---
+
+## 9. Local SEO Strategy
+
+**Is a location page justified?** For a single-location business, one honest
+"Werkgebied" block on the home page plus consistent NAP is enough. Dedicated
+per-district pages (`/badkamer-renovatie-deurne/` etc.) are **not** created
+here, for two reasons: (1) the sibling microsites `deurne.montegava.com`,
+`merksem.montegava.com`, `borgerhout.montegava.com`, `berchem.montegava.com`
+already target those terms on the same template — building them again on this
+domain is internal duplication and a doorway-page pattern; (2) there is no
+district-specific substance (separate teams, separate reviews, separate
+projects) to fill them. If the owner confirms the sibling sites are being
+retired, revisit this — but even then, only with genuinely different content
+per district.
+
+**What to do instead**
+
+| Action | Detail | Owner |
+|--------|--------|-------|
+| One "Werkgebied" block (P1) | Plain-text list: Antwerpen-stad, Deurne, Berchem, Borgerhout, Merksem, Wilrijk, Ekeren, Hoboken, Antwerpen-Noord, Antwerpen-Zuid. One line on werfzone/parking logistics. No outbound links. | Done in rebuild |
+| Google Bedrijfsprofiel (Business Profile) | Create/claim, category "Aannemer badkamerrenovatie" / "Badkamervernieuwer", real address or service-area listing, real photos, link to `/`. This is the single highest-value local asset and the only legitimate route to a visible star rating. | `[FACT REQUIRED: does a GBP exist? If yes, URL; if no, create]` |
+| NAP consistency | Exact same name / address / phone on P1, P5, footer, schema, GBP, and any directory. Decide the canonical legal name (with "onderdeel van Avant Garde Afbouw"). | `[FACT REQUIRED: confirm address + KBO]` |
+| Belgian directories | Trustoo/Bobex/Livios-type lead platforms, UNIZO member listing if applicable, Google. Only list once NAP + KBO are fixed. | Owner |
+| Reviews process | Ask every completed customer for a Google review; respond to each. No on-site rating claim until GBP has real reviews. | Owner |
+| `areaServed` in schema | "Antwerpen" + district names as `areaServed` on `Organization`/`Service`. | Done in rebuild |
+| Language/region signals | `lang="nl-BE"`, `og:locale="nl_BE"`, Dutch content, `.be`-market phrasing, prices in €. | Done in rebuild |
+
+**Local content that is genuine, not doorway:** the P1 "Afgestemd op uw type
+woning in Antwerpen" block (housing stock), the P4 permits/VME/VAT/asbest
+answers, and the werfzone/parking logistics. These make the site locally
+relevant without templated city pages.
+
+---
+
+## 10. Internal Linking Strategy
+
+**Model:** hub-and-spoke. P1 is the hub; P2, P4, P6 are commercial/info spokes;
+P3 and P5 are conversion-support. Every spoke links back to the hub (nav) and
+forward to P5 (contact). Depth from home ≤ 2 clicks for every page.
+
+**Contextual links to add (source → target — anchor)**
+
+| Source | Target | Anchor text |
+|--------|--------|-------------|
+| P1 "Onze diensten in het kort" | P2 | "Bekijk alle diensten" |
+| P1 "Onze diensten in het kort" | P6 | "Toilet renoveren in Antwerpen" |
+| P1 mini-FAQ (kosten) | P4 | "pagina met veelgestelde vragen" |
+| P1 mini-FAQ (footer of block) | P4 | "Alle veelgestelde vragen" |
+| P1 local-fit / appartement | P4 | "toestemming van de syndicus" → FAQ VME answer |
+| P2 each service section | P5 | "Plaatsbezoek aanvragen" |
+| P2 "Wat de prijs bepaalt" | P4 | "hoe lang duurt het" / price answers |
+| P2 toilet teaser | P6 | "Toilet renoveren in Antwerpen" |
+| P3 "Wie wij zijn" | P2 | "volledige en gedeeltelijke renovaties" |
+| P3 "Waarborg en verzekering" | P4 | "welke waarborg u krijgt" |
+| P4 price/duration answers | P2 | "wat een volledige renovatie omvat" (`/diensten/#complete`) |
+| P4 "badkamer of toilet gebruiken" | P6 | "een aparte toiletrenovatie" |
+| P4 "welke waarborg" | P3 | "onze werkwijze en verzekering" |
+| P6 "los of samen met de badkamer" | P2 | "complete badkamerrenovatie" (`/diensten/#complete`) |
+| P6 FAQ (appartement) | P4 | "veelgestelde vragen" |
+| P3 / P4 / P6 | P1 | brand/logo + "Home" (nav) |
+| All | P5 | primary CTA buttons ("Plaatsbezoek aanvragen", "Offerte aanvragen") |
+
+**Rules:** vary anchor text (no repeated exact-match "badkamer renovatie
+Antwerpen" links); links in body prose, not just buttons; no links out to the
+sibling microsites or any competitor; `tel:+32491980272` on every page.
+
+**Nav (all pages):** Home · Diensten · Toilet renovatie · Over ons ·
+Veelgestelde vragen · Contact. **Footer:** same + Privacybeleid · Algemene
+voorwaarden + NAP block + "Werkgebied" plain text.
+
+---
+
+## 11. Technical SEO Recommendations
+
+Each item tagged `CONFIRMED ISSUE` (visible in the repo) or
+`REQUIRES TECHNICAL VERIFICATION` (depends on live server config not in the
+mirror).
+
+| # | Item | Status | Action |
+|---|------|--------|--------|
+| T1 | `rel=canonical` is relative (`href="index.html"`) on every page | CONFIRMED | Set absolute self-canonical per page (`https://badkamerrenovatie.montegava.com/<slug>/`) |
+| T2 | `<html lang="en-US">`, `og:locale="en_US"`, `inLanguage:"en-US"` | CONFIRMED | `nl-BE` / `nl_BE` everywhere |
+| T3 | Multiple `<h1>` on `/diensten/` and `/faq/` | CONFIRMED | One `<h1>` per page; demote extras to `<h2>` |
+| T4 | `/toilet-renovatie-nijmegen/` = lorem-ipsum, `noindex`, linked sitewide | CONFIRMED | Build `/toilet-renovatie-antwerpen/`; repoint links; `git rm` old dir |
+| T5 | `/toilet-renovatie-nijmegen/` → `/toilet-renovatie-antwerpen/` redirect | REQUIRES TECHNICAL VERIFICATION | Add a **301** server-side (`.htaccess` / nginx / host panel). Not configurable from this static mirror. Also 301 any historical `/toilet-renovatie-nijmegen` inbound links. |
+| T6 | No `robots.txt` | CONFIRMED | Add at web root, referencing the sitemap |
+| T7 | No `sitemap.xml` | CONFIRMED | Add with the 8 canonical URLs; submit in Search Console |
+| T8 | Contact page schema entity = "Badkamer Renovatie Amsterdam" (×4) | CONFIRMED | Rename to "Badkamer Renovatie Antwerpen"; unify `@id` graph |
+| T9 | `Organization` name/details differ across pages | CONFIRMED | One shared `Organization` node (`@id` `…/#organization`), identical on every page |
+| T10 | Image `alt`/JSON-LD captions say "nijmegen" (`diensten` l.26/353/405, `index` l.342) | CONFIRMED | Rewrite `alt` to describe the actual image + "Antwerpen" where relevant; fix captions |
+| T11 | Image filenames generic/localised (`badkamer-renovatie-antwerpen-*` OK; WhatsApp-Image-* not descriptive) | CONFIRMED (minor) | On next image update, use descriptive kebab-case filenames |
+| T12 | UTF-8 mojibake in visible text ("efficiÃ«nt", "âœ“", "�") | CONFIRMED | Fix to correct characters; keep files UTF-8 (BOM retained to match existing) |
+| T13 | `<h5>` used as eyebrow labels (carry heading semantics) | CONFIRMED | Convert to `<p>`/`<span>` with a class, or fold into the following `<h2>` |
+| T14 | FAQ rich-result integrity: on-page FAQ text must match `FAQPage` schema exactly; no bracketed `[FACT REQUIRED]` text in schema | CONFIRMED (process) | Regenerate `FAQPage` from the final rendered answers |
+| T15 | Trailing-slash / index.html consistency (`/diensten/` vs `/diensten/index.html`) | REQUIRES TECHNICAL VERIFICATION | Ensure the live server serves and links one canonical form (directory with trailing slash); 301 the other |
+| T16 | HTTPS / HSTS / redirect http→https and non-www→apex (or chosen host) | REQUIRES TECHNICAL VERIFICATION | Confirm single redirect hop to the canonical host |
+| T17 | `aggregateRating` / `Review` schema | CONFIRMED (risk) | Do not add unless backed by a real, visible, sourced review set (Google policy) |
+| T18 | Sibling microsites on the same template (network duplication) | REQUIRES STRATEGIC DECISION | Cross-site: either consolidate to one domain with genuinely differentiated district content, or `rel=canonical` the weaker duplicates, or keep them clearly distinct. Cannot be fixed from this repo alone. |
+| T19 | Core Web Vitals: Elementor + multiple CSS/JS bundles, WhatsApp images at 1170–2304px served large | REQUIRES TECHNICAL VERIFICATION | Check LCP/CLS in field data; compress/resize hero images; lazy-load below the fold (some already `loading="lazy"`); defer unused Elementor CSS |
+| T20 | `datePublished`/`dateModified` in schema are 2023–2026 template values | CONFIRMED (minor) | Set `dateModified` to the real relaunch date on publish |
+| T21 | Empty `home/` directory in repo | CONFIRMED (housekeeping) | Remove |
+| T22 | Mailto mismatch: visible `info@…` vs `mailto:admin@…` | CONFIRMED | Use one address consistently (recommend `info@…`) |
+| T23 | Crawl depth / orphan risk for `/toilet-renovatie-antwerpen/` | CONFIRMED (prevented) | Ensure it's in nav + footer + P1/P2/P4 body links + sitemap |
+
+---
+
+## 12. UX & Conversion Recommendations
+
+| Page | Finding | Recommendation |
+|------|---------|----------------|
+| P1 | Three near-identical intro sections before any substance; visitor bounces before reaching the useful "past bij de woning" block | Collapse to one scope section; move the local-fit block up; put a real CTA above the fold |
+| P1 | Hero claims ("Gecertificeerd Vakmanschap", "15+ jaar", "5.0 500+") are unverifiable and, once doubted, taint the page | Replace with a concrete one-line promise ("één vast team, van uitbraak tot afwerking") + CTA |
+| P1 | "Recente Projecten" tiles with no location/date/scope read as stock | Hide until real project photos with captions exist |
+| P1 | 8-question FAQ on the home page competes with `/faq/` and lengthens the page | 4 home-level Q, link to `/faq/` |
+| P2 | ~450 words on the money page; nothing about scope, sequence, or price drivers | Rebuilt content adds all three; add a jump-menu to the four sections |
+| P3 | Counter animation ("0+ jaar") and "500+" are the only "proof" and are hollow | Replace with operator disclosure + process + `[FACT REQUIRED]` team/insurance/warranty |
+| P4 | 2× `<h1>`; answers duplicate the home page; nothing Antwerp-specific | Single `<h1>`; grouped accordion; permits/VME/VAT/asbest answers |
+| P5 | English form labels; no map; no "what happens next"; no response-time; entity says Amsterdam | Dutch labels; add map + route/parking note; add "binnen 1 werkdag antwoord" `[FACT REQUIRED: confirm]`; fix entity |
+| P5 | Single generic "Message" field; hard for the business to qualify leads | Add optional fields: type werk (volledige renovatie / deelrenovatie / toilet), woningtype (huis / appartement), district, gewenste periode |
+| All | CTA wording varies ("Vrijblijvende Inspectie") and uses a term less common in BE | Standardise on "Plaatsbezoek aanvragen" (primary) / "Offerte aanvragen"; keep one sticky header button |
+| All | No visible phone link on mobile header | Add `tel:` click-to-call in the header |
+| All | Mojibake characters | Fix |
+| All | Cookie/consent (Complianz present) | Verify the banner works, blocks non-essential scripts pre-consent, and matches the (reviewed) privacy policy — `REQUIRES VERIFICATION` |
+| All | Mobile: Elementor sections with large images; check tap-target spacing in the nav (recent commit "fix humburher menu" suggests past issues) | Manual mobile pass after rebuild |
+
+**Lead measurement:** distinct thank-you URL (`/contact/bedankt/`) for form
+conversions; `tel:` click as a secondary conversion; note which page the lead
+came from (hidden form field with the referring path).
+
+---
+
+## 13. Trust / E-E-A-T Recommendations
+
+**Core recommendation: substantiate or remove.** Every quantified trust claim
+currently on the site is unverifiable. Each one must either get a real,
+citable backing or be deleted from the rebuilt pages.
+
+| Current claim | Where | Status | Action |
+|---------------|-------|--------|--------|
+| "15+ jaar ervaring" / "Meer dan 15 jaar uw specialist" | P1 hero, meta, footer tagline (all pages), P5, P7 | Unverifiable | Remove. Optionally replace with `[FACT REQUIRED: startjaar badkamerrenovaties in regio Antwerpen]` → "sinds JJJJ" |
+| "500+ projecten" / "500+ tevreden klanten" | P1 (×3), P5, P2 stat block, P3 | Unverifiable | Remove. Optionally `[FACT REQUIRED: verifieerbaar aantal afgeronde projecten + periode]` |
+| "5.0" klantwaardering | P1 (×3), P5 | Unverifiable, and no `Review`/`aggregateRating` source | Remove all "5.0" text. Reinstate only as a live Google Business Profile rating widget/link once real reviews exist |
+| "Gecertificeerd Vakmanschap" | P1 hero | Vague, unverifiable | Remove, or `[FACT REQUIRED: welk getuigschrift/attest/erkenning? bv. erkend aannemer, getuigschrift tegelzetten, VCA]` then state it specifically |
+| "garantie op de uitgevoerde werkzaamheden" (no term) | P1 FAQ, P4 | Term unspecified | `[FACT REQUIRED: schriftelijke waarborgtermijn + scope]`; state the specific term |
+| "KVK-nummer 67228275" | P5 (×2) | Dutch registration on a Belgium-targeted site | Replace with `[FACT REQUIRED: Belgisch KBO- + btw-BE-nummer]`; if the entity is only NL-registered, disclose that honestly |
+| "Van Lissumstraat 45, 2100 Antwerpen" | P1, P5 | Unconfirmed | `[FACT REQUIRED: bevestig of dit een echt kantoor-/werkadres is]` |
+| Testimonials ("Wat klanten over ons zeggen") | P1 | No attributable content | Only publish real reviews with first name + district + month/year, ideally mirrored from Google |
+| "Recente Projecten" (6 tiles) | P1 | No metadata | Only with own photos + location + date + scope + (ideally) client consent line |
+
+**Legitimate E-E-A-T signals available now (use these):**
+- Operator disclosed: "onderdeel van Avant Garde Afbouw" (a real finishing
+  contractor) — with a concrete, checkable rationale (tiling/screed/underfloor
+  heating are its core trades).
+- Transparent process: named work sequence, one contact point, fixed crew,
+  written planning, clean-site commitment.
+- Genuine local expertise: permits, VME/syndicus, 6% VAT, asbestos, werfzone
+  logistics — specific and correct.
+- Clear, consistent NAP + working hours + phone + email.
+- Honest scoping ("we'll tell you if a partial job is a false economy";
+  "volledig stofvrij bestaat niet"; "wij dienen zelf geen vergunningsaanvragen
+  in").
+
+**`[FACT REQUIRED]` signals to collect (in priority order):**
+1. Belgian KBO + btw-BE number (or honest disclosure of NL-only registration).
+2. Confirmed Antwerp address (or switch to a service-area model with no street address).
+3. Written warranty term + scope on the works.
+4. Liability + (where relevant) ten-year insurance details.
+5. Named team members + their qualifications/attesten.
+6. Google Business Profile with real reviews.
+7. 3–5 real projects with photos, district, month/year, scope, and client consent.
+8. First year of bathroom-renovation activity in the Antwerp region.
+
+**Authorship:** give P4 (and any future guide) a short "Deze informatie is
+opgesteld door het team van Badkamer Renovatie Antwerpen" line with a
+last-reviewed date, once the team is nameable.
+
+---
+
+## 14. Content Gaps
+
+Prioritised by business value × search intent × customer usefulness ×
+realistic ranking opportunity.
+
+### Missing commercial pages
+| Gap | Priority | Notes |
+|-----|----------|-------|
+| `/toilet-renovatie-antwerpen/` | **P1 (now)** | Built in this rebuild — replaces the broken slug |
+| `/inloopdouche-plaatsen-antwerpen/` | P4 (later) | Common high-intent job; build only with 2–3 real inloopdouche projects to show |
+| `/badkamer-renovatie-appartement-antwerpen/` | P4 (later) | Strong angle (VME/syndicus/standleidingen); needs a real apartment case study |
+| `/badkamerrenovatie-prijs-antwerpen/` (price guide) | P3 (later) | Only worth doing with real, defensible price ranges |
+
+### Missing informational content
+| Gap | Priority | Target |
+|-----|----------|--------|
+| Permits & the omgevingsvergunning for interior bathroom works in Flanders | P2 | P4 answer now; standalone guide later |
+| Renoveren in een appartement: syndicus, VME-reglement, standleidingen | P2 | P4 answer now; guide later |
+| Waterdichting/tanking explained (why bathrooms leak) | P3 | Section in P2 now; guide later |
+| Material choice guide (tegels/sanitair/verlichting) | P3 | P2 section now; guide later |
+| Realistic timeline breakdown day-by-day | P4 | P4 answer |
+
+### Missing trust content
+| Gap | Priority |
+|-----|----------|
+| Real project gallery with metadata | **P1** |
+| Team page content (names, roles, qualifications) | **P1** |
+| Warranty & insurance page/section | **P1** |
+| Reviews (Google Business Profile + on-site mirror) | **P1** |
+| Company registration (KBO/btw-BE) visible in the footer | **P1** |
+
+### Missing local content
+| Gap | Priority |
+|-----|----------|
+| Honest "Werkgebied" block (districts) | **P1** — done in rebuild |
+| Werfzone/parking logistics for city works | P2 — in P4/P5 |
+| Housing-stock context (rijhuis/herenhuis/appartement) | P2 — in P1 local-fit block |
+
+### Missing conversion content
+| Gap | Priority |
+|-----|----------|
+| "What happens after you contact us" (steps + timing) | **P1** — in P5 + P1 sequence |
+| Qualifying form fields (type work, woningtype, district, timing) | **P1** — in P5 |
+| Distinct thank-you page | P2 |
+| Click-to-call in header | **P1** |
+
+---
+
+## 15. Pages to Keep / Rebuild / Merge / Remove / Create
+
+**KEEP (as URLs; content still rebuilt):** none are fine as-is.
+
+**REBUILD (keep URL, reconstruct content):**
+- `/` — P1
+- `/diensten/` — P2 (also absorbs the home 3-service block)
+- `/over-ons/` — P3
+- `/faq/` — P4 (also absorbs the home FAQ depth)
+- `/contact/` — P5
+- `/privacy-policy/` — P7 (light + legal review)
+- `/algemene-voorwaarden/` — P8 (light + legal review)
+
+**MERGE:**
+- Home's three intro sections ("…oog voor detail" + "Maatwerk oplossingen" +
+  "…afgestemd op jouw woning") → **one** scope section on P1.
+- Home's "Uw partner…" 3-service triad → merged into P2; P1 keeps only a
+  3-line teaser.
+- Home FAQ (8 Q) + `/faq/` (8 Q) → **one** authoritative FAQ on P4; P1 keeps a
+  4-item mini-FAQ with distinct wording.
+
+**REMOVE:**
+- `/toilet-renovatie-nijmegen/` (directory) — replaced by
+  `/toilet-renovatie-antwerpen/`; 301 the old path.
+- Footer "Werkgebied" outbound links to sibling microsites — replace with
+  plain text.
+- All "5.0 / 500+ / 15+ jaar / gecertificeerd" claim strings site-wide.
+- "Recente Projecten" tiles and testimonials carousel — until real material.
+- Empty `home/` directory.
+
+**CREATE:**
+- `/toilet-renovatie-antwerpen/` — P6 (now).
+- `robots.txt`, `sitemap.xml` (now).
+- `/contact/bedankt/` thank-you page (phase 2).
+- Later, contingent on real material: `/inloopdouche-plaatsen-antwerpen/`,
+  `/badkamer-renovatie-appartement-antwerpen/`, a price guide, a project
+  gallery, informational guides (see §14).
+
+---
+
+## 16. Final Website Blueprint
+
+| Page | URL | Search Intent | Primary Topic | Primary Keyword | Purpose | Priority |
+|------|-----|---------------|---------------|-----------------|---------|----------|
+| Home | `/` | Local + commercial | End-to-end bathroom renovation by one Antwerp team | badkamer renoveren Antwerpen | Convey scope, process, local fit; drive plaatsbezoek | P1 |
+| Diensten | `/diensten/` | Commercial investigation | What each renovation service involves | badkamerrenovatie diensten Antwerpen | Help choose scope; drive offerte | P1 |
+| Toilet renoveren in Antwerpen | `/toilet-renovatie-antwerpen/` | Commercial + local | Renovating a separate toilet room | toilet renoveren Antwerpen | Capture toilet-only intent; drive offerte | P1 |
+| Over ons | `/over-ons/` | Trust / commercial investigation | Who runs and does the work | over Badkamer Renovatie Antwerpen | Build trust; drive contact | P1 |
+| Veelgestelde vragen | `/faq/` | Informational (pre-purchase) | Practical & regulatory questions for Antwerp | badkamerrenovatie Antwerpen veelgestelde vragen | Remove objections; drive contact | P1 |
+| Contact | `/contact/` | Transactional / local | Reaching the business; what happens next | badkamerrenovatie Antwerpen contact | Capture the lead | P1 |
+| Bedankt | `/contact/bedankt/` | — | Confirmation | — | Conversion tracking | P2 |
+| Privacybeleid | `/privacy-policy/` | — | GDPR notice | — | Compliance | P2 (legal review) |
+| Algemene voorwaarden | `/algemene-voorwaarden/` | — | Terms | — | Compliance | P2 (legal review) |
+| Inloopdouche plaatsen (Antwerpen) | `/inloopdouche-plaatsen-antwerpen/` | Commercial + local | Walk-in shower installation | inloopdouche plaatsen Antwerpen | Capture sub-intent | P4 (needs projects) |
+| Badkamerrenovatie appartement Antwerpen | `/badkamer-renovatie-appartement-antwerpen/` | Commercial + local | Apartment-specific renovation | badkamer renoveren appartement Antwerpen | Capture sub-intent | P4 (needs case study) |
+| Prijsgids badkamerrenovatie | `/badkamerrenovatie-prijs-antwerpen/` | Commercial investigation | Price ranges & drivers | badkamerrenovatie prijs Antwerpen | Pre-qualify; capture price intent | P4 (needs real ranges) |
+| Projecten | `/projecten/` | Commercial investigation / trust | Real completed work | badkamerrenovatie voorbeelden Antwerpen | Proof | P3 (needs photos + consent) |
+
+Priority key: **P1** = core relaunch · **P2** = shortly after · **P3** = when
+trust material exists · **P4** = topical expansion when project content exists.
+
+---
+
+## 17. Implementation Roadmap
+
+### PHASE 1 — Critical (relaunch blockers)
+| Task | Priority | Expected benefit | Difficulty | Dependencies | Recommended action |
+|------|----------|------------------|------------|--------------|--------------------|
+| Remove all cross-city contamination (Amsterdam schema, Nijmegen FAQ, Amsterdam districts, "nijmegen" alt text, `lang=en-US`) | Critical | Stops the site reading as a spun template; fixes a factually wrong service area | Low | — | Done in this rebuild (Tasks 6–13) |
+| Replace `/toilet-renovatie-nijmegen/` lorem-ipsum with real `/toilet-renovatie-antwerpen/`; repoint sitewide links; 301 | Critical | Fixes a broken link on every page; recovers a high-intent query | Low (page) / Med (301 = server) | Server access for the 301 | Build page now; hand 301 to host admin |
+| Remove or gate every unverifiable claim ("15+ jaar", "500+", "5.0", "gecertificeerd", KVK) | Critical | Removes WER Boek VI exposure; protects credibility | Low | Owner decisions for optional replacements | Default to claim-free copy; `[FACT REQUIRED]` for anything to reinstate |
+| Fix entity identity: KBO/btw-BE, confirmed address, consistent `Organization` schema | Critical | Legal clarity; consistent entity graph | Low (once facts supplied) | `[FACT REQUIRED]` KBO, address | Collect from owner, then apply |
+| `robots.txt` + `sitemap.xml`; absolute canonicals; single `<h1>` per page; `nl-BE` | High | Baseline crawlability & correct targeting | Low | — | Done in this rebuild |
+| Fix mojibake | Med | Perceived quality | Low | — | Done in this rebuild |
+
+### PHASE 2 — Core website
+| Task | Priority | Benefit | Difficulty | Dependencies | Action |
+|------|----------|---------|------------|--------------|--------|
+| Publish rebuilt P1–P6 content | High | Original, useful, converting pages | Med | Phase 1 | Tasks 6–11 |
+| P5 qualifying form fields + `/contact/bedankt/` + `tel:` in header | High | Better leads + measurement | Low/Med | Form plugin (Elementor Pro forms present) | Configure |
+| Internal linking pass (§10) | High | Distributes authority; guides users | Low | Pages live | Add contextual links |
+| Legal pages light pass + send to a lawyer | High | Compliance | Low (pass) / external (review) | Lawyer | Task 12 + brief a lawyer |
+| Remove sibling-microsite footer links | Med | Stops leaking clicks to network competitors | Low | — | Task 11 |
+
+### PHASE 3 — Local SEO
+| Task | Priority | Benefit | Difficulty | Dependencies | Action |
+|------|----------|---------|------------|--------------|--------|
+| Google Bedrijfsprofiel: create/claim, categories, photos, service area | High | Primary local-visibility asset; legitimate ratings | Low | Confirmed NAP | Owner |
+| NAP consistency across site + GBP + directories | High | Local ranking signal | Low | KBO/address | Owner + dev |
+| Reviews collection workflow | High | Real social proof; GBP ranking | Low ongoing | GBP live | Owner |
+| Belgian directory listings | Med | Citations + referral leads | Low | NAP fixed | Owner |
+| `areaServed` + districts content | Med | Local relevance without doorway pages | Low | — | Done in rebuild |
+| Resolve sibling-microsite duplication (canonical / differentiate / consolidate) | Med | Protects the whole cluster | Med | Cross-site access, owner decision | Strategic decision with the agency |
+
+### PHASE 4 — Authority
+| Task | Priority | Benefit | Difficulty | Dependencies | Action |
+|------|----------|---------|------------|--------------|--------|
+| Project gallery `/projecten/` with metadata | High | Strongest E-E-A-T proof | Med | Photos + client consent | Owner supplies; dev builds |
+| Guides: permits/omgevingsvergunning, appartement/VME, waterdichting, materiaalkeuze | Med | Topical authority; pre-purchase capture | Med | Writing time | One per month |
+| Dedicated `/inloopdouche-plaatsen-antwerpen/`, `/badkamer-renovatie-appartement-antwerpen/` | Med | Sub-intent capture | Med | ≥2 real projects each | Build when material exists |
+| Price guide with defensible ranges | Med | High-intent capture; pre-qualification | Low | Owner price data | Build when ranges are real |
+
+### PHASE 5 — Conversion optimisation
+| Task | Priority | Benefit | Difficulty | Dependencies | Action |
+|------|----------|---------|------------|--------------|--------|
+| A/B primary CTA wording & placement | Med | More leads per visit | Low | Traffic + analytics | Test "Plaatsbezoek aanvragen" vs "Offerte aanvragen" |
+| Trust strip near hero (once real: reviews count, warranty term, KBO, insurance) | Med | Conversion lift | Low | Facts collected | Add |
+| Response-time commitment on P5 ("binnen 1 werkdag") | Med | Reduces drop-off | Low | Owner confirms SLA | Add |
+| Lead-source tracking (hidden field + thank-you URL + call tracking) | Med | Know which pages convert | Low/Med | Analytics | Configure |
+| Mobile pass (nav tap targets, image weight, LCP) | Med | UX + CWV | Med | — | Manual QA |
+
+### PHASE 6 — Continuous improvement
+| Task | Cadence | Action |
+|------|---------|--------|
+| Search Console + GA review | Monthly | Queries, pages, CTR, conversions; fix drops |
+| Review responses | Weekly | Reply to every Google review |
+| Content refresh (FAQ, prices, guides) | Quarterly | Keep regulatory answers (VAT %, permit rules) current |
+| Project gallery updates | As completed | Add new work with metadata + consent |
+| Technical monitoring | Monthly | Broken links, canonical drift, schema validity, CWV field data, redirect chains |
+| Claim audit | Quarterly | Any new marketing copy re-checked against "substantiate or remove" |
+
+---
+
+## 18. Final Quality & Originality Audit
+
+The ten questions from the brief, applied to the §8 rebuilt content.
+
+| # | Question | P1 Home | P2 Diensten | P3 Over ons | P4 FAQ | P5 Contact | P6 Toilet |
+|---|----------|---------|-------------|-------------|--------|------------|-----------|
+| 1 | Could this page have been written without seeing the source site? | Yes | Yes | Yes | Yes | Yes | Yes (new) |
+| 2 | Own information architecture (not the template's)? | Yes — scope/sequence/local-fit/teaser/mini-FAQ replaces 3-intro + 4-step + triad + 8-FAQ | Yes — anchored sections with includes/sequence/choices/price-drivers | Yes — operator/why-afbouw/team/process/warranty | Yes — grouped by prijs·vergunningen·tijdens·na | Yes — NAP/what-happens-next/qualifying form | Yes |
+| 3 | Headings independently developed? | Yes | Yes | Yes | Yes | Yes | Yes |
+| 4 | Arguments independently developed? | Yes — "onzichtbare punten falen het vaakst", housing-stock specifics | Yes — "false economy" honesty, price-driver logic | Yes — "afbouwbedrijf = kernstielen van een badkamer" | Yes — Flanders regulation specifics | Yes — lead-qualification rationale | Yes — small-space logic |
+| 5 | Examples independently developed? | Yes — Zurenborg/Zuid/Borgerhout, gietijzeren afvoer, standleidingen | Yes — concrete job lists | Yes | Yes — 6% vs 21%, pre-2001 asbest, syndicus | n/a | Yes — hangtoilet in lichte wand |
+| 6 | CTAs independently developed? | Yes — "Plaatsbezoek aanvragen" + `tel:` (not "Vrijblijvende Inspectie") | Yes | Yes | Yes | Yes | Yes |
+| 7 | Contains genuine info about *this* business? | Partial — operator real; several facts pending `[FACT REQUIRED]` | Yes | Partial — pending team/insurance facts | Yes | Partial — pending KBO/address | Yes |
+| 8 | Unique value to the target customer? | Yes — local fit + honest process | Yes — decision help + price transparency | Yes — who/why/guarantee | Yes — the only page covering permits/VME/VAT | Yes — clearer next step | Yes — dedicated toilet guidance |
+| 9 | Avoids unnecessary similarity to the source? | Yes — no shared structure, headings, FAQ wording, or CTA text | Yes | Yes | Yes — Nijmegen answer removed; no wording overlap with P1 | Yes — Amsterdam schema removed | Yes — not a shrunk bathroom page |
+| 10 | Substantially more useful than a synonym rewrite? | Yes | Yes | Yes | Yes | Yes | Yes |
+
+**Residual dependencies on the business owner (not originality failures, but
+completeness gaps):** items flagged `[FACT REQUIRED]` on P1, P3, P4, P5 and the
+legal pages — consolidated into the checklist below. Until these are supplied,
+the affected pages are honest and publishable but thinner on proof than they
+should be.
+
+**Fails found & reworked during the audit:** the first draft of P1 kept a
+"4 stappen" heading pattern echoing the template — reworked into a named
+5-step sequence with different step content. P4's "kosten" answer initially
+overlapped P1's wording — P1's was reduced to a home-level summary that links
+to P4.
+
+---
+
+## Appendix A — `[FACT REQUIRED FROM BUSINESS OWNER]` checklist
+
+Collect these before or shortly after relaunch. Ordered by impact.
+
+**Legal / identity (blockers for a compliant Belgian site)**
+- [ ] Belgian **KBO (ondernemingsnummer)** and **btw-BE** number — or an explicit statement that the entity is NL-registered only (with the KVK number and NL address shown honestly).
+- [ ] Confirmed **Antwerp address** — is "Van Lissumstraat 45, 2100 Antwerpen" a real office/works address? If not, supply the correct one or move to a service-area model with no street address.
+- [ ] Correct **opening hours** (site currently says Mon–Sun 08:00–17:00).
+- [ ] One canonical **email** (site shows `info@…` but links `mailto:admin@…`).
+- [ ] **Privacy policy & terms** reviewed by a lawyer against GDPR + WER Boek VI (2-year legal warranty, information duties, withdrawal-right rules for works).
+
+**Trust / E-E-A-T (each unlocks a stronger page)**
+- [ ] Written **warranty term + scope** on the works (e.g. "2 jaar op alle uitgevoerde werken, 10 jaar wettelijke aansprakelijkheid voor structurele elementen").
+- [ ] **Insurance**: BA-uitbating and, where relevant, tienjarige aansprakelijkheid — insurer + policy reference if you want to show it.
+- [ ] **Team**: names, roles, and any qualifications/attesten (getuigschrift tegelzetten, VCA, erkend aannemer, …).
+- [ ] **Google Bedrijfsprofiel**: does one exist? URL. If not, create it.
+- [ ] **Real reviews**: at least a few, with first name + district + month/year, ideally on Google.
+- [ ] **3–5 real projects**: photos, district, month/year, scope — plus client consent to publish.
+- [ ] **First year** of bathroom-renovation activity in the Antwerp region (for "sinds JJJJ").
+- [ ] Verifiable **project count** for the region, if you want to state one.
+
+**Operational details referenced in the copy**
+- [ ] AREI keuring — do you arrange it or does the client?
+- [ ] Which **documents** are handed over at oplevering (keuringsverslag, garantiebewijs, onderhoudsadvies)?
+- [ ] **Payment schedule** and terms (voorschot / tussentijdse schijf / saldo).
+- [ ] **6% btw**: do you apply it, and how is the client declaration/attest handled on the invoice?
+- [ ] **Asbestos**: fixed specialist partner? Your role — coordination or referral only?
+- [ ] **Werfzone permit + container**: charged separately or included?
+- [ ] **Response-time** commitment for new enquiries and for warranty calls.
+- [ ] Optional **price ranges** you can defend (for P4 and a future price guide).
+
+**Strategic (with the agency)**
+- [ ] Status of the sibling microsites (Deurne, Merksem, Borgerhout, Berchem) — keep-and-differentiate, canonicalise, or consolidate?
+- [ ] Server access for the 301 redirect and redirect-hygiene tasks.
