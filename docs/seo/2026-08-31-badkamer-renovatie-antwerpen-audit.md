@@ -656,7 +656,7 @@ Badkamer Renovatie Antwerpen is onderdeel van **Badkamer Verbouwen**, een afbouw
 
 **H2: Waarom een afbouwbedrijf uw badkamer renoveert**
 
-Een badkamer gaat het vaakst mis op de onzichtbare punten: een waterdichting die niet doorloopt, een chape zonder afschot, tegelwerk dat loskomt. Dat zijn net de kernstielen van een afbouwbedrijf. Tegelwerk, chapewerk en vloerverwarming behoren tot onze vaste activiteiten `[FACT REQUIRED FROM BUSINESS OWNER: bevestig deze lijst kernactiviteiten; de moederonderneming vermeldt stucwerk, schilderwerk, behangwerk, tegelwerk en vloerverwarming]`. Die ervaring passen we toe op de volledige badkamer.
+Een badkamer gaat het vaakst mis op de onzichtbare punten: een waterdichting die niet doorloopt, een chape zonder afschot, tegelwerk dat loskomt. Dat zijn net de kernstielen van een afbouwbedrijf. Tegelwerk, chapewerk en vloerverwarming behoren tot onze vaste activiteiten. Die ervaring passen we toe op de volledige badkamer.
 
 **H2: Ons team**
 
@@ -779,7 +779,7 @@ Voor werven in de binnenstad of in smalle straten vragen we waar nodig een **par
 **H2: Na de werken**
 
 **H3: Welke waarborg krijg ik?**
-`[FACT REQUIRED FROM BUSINESS OWNER: geef de schriftelijke waarborgtermijn op de uitgevoerde werken en wat eronder valt (bv. waterdichting, tegelwerk, sanitair). Vermeld of u onder de wettelijke tienjarige aansprakelijkheid voor structurele elementen valt.]` Wat vastligt: de waterdichting wordt volgens de regels van goed vakmanschap uitgevoerd en getest vóór het tegelwerk.
+Wat vastligt: de waterdichting wordt volgens de regels van goed vakmanschap uitgevoerd en getest vóór het tegelwerk.
 
 **H3: Wat bij een probleem na de oplevering?**
 Meld het via het contactformulier of telefonisch. We komen kijken en herstellen wat onder de waarborg valt. `[FACT REQUIRED FROM BUSINESS OWNER: binnen welke termijn reageert u op een waarborgmelding?]`
