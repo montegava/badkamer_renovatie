@@ -22,7 +22,7 @@ homeowners and apartment owners in Antwerp. It is a WordPress/Elementor site
 built by the agency MONTEGAVA and is one node in a network of near-identical
 "Badkamer Renovatie \<place\>" microsites (siblings for Deurne, Merksem,
 Borgerhout and Berchem are linked in its own footer). The work is delivered by
-**Avant Garde Afbouw**, an Amsterdam-based finishing contractor (stucwerk,
+**Badkamer Verbouwen**, an Amsterdam-based finishing contractor (stucwerk,
 schilderwerk, tegelwerk, vloerverwarming).
 
 **The three problems.**
@@ -40,7 +40,7 @@ schilderwerk, tegelwerk, vloerverwarming).
 2. **Unverifiable trust claims.** "15+ jaar ervaring", "500+ projecten", "5.0 /
    500+ tevreden klanten", "gecertificeerd vakmanschap" and an unspecified
    "garantie" appear throughout. None can be verified from any public source for
-   this business or for Avant Garde Afbouw, and the company identity block uses
+   this business or for Badkamer Verbouwen, and the company identity block uses
    a **Dutch KVK number** (67228275) rather than a Belgian enterprise (KBO)
    number. Under Belgian market-practice law (WER Boek VI) and Google's own
    quality guidance, unsubstantiated superlatives and review claims are a
@@ -128,7 +128,7 @@ reputational exposure from invented claims.
 ### P3 — Over ons `/over-ons/`
 - **Outline:** H1 "Over ons" · H5 eyebrow "badkamer renovatie Antwerpen" · H3 "Over Ons" · H3 Persoonlijke Aanpak / 500+ Renovaties / Hoogwaardige Afwerking · H3 "Persoonlijke aanpak met vakmanschap centraal" · H3 CTA
 - **Content:** two generic paragraphs about "comfort, rust en uitstraling"; a "0+ jaar Ervaring" animated counter; "honderden badkamers … in Antwerpen en omgeving"
-- **Missing:** the real story (Avant Garde Afbouw, why Antwerp, since when), named people, qualifications, insurance, warranty terms, real project photos
+- **Missing:** the real story (Badkamer Verbouwen, why Antwerp, since when), named people, qualifications, insurance, warranty terms, real project photos
 
 ### P4 — FAQ `/faq/`
 - **Outline:** H1 "FAQ" + H1 "Veelgestelde vragen" (bug) · H5 ×8 questions · H3 CTA
@@ -251,7 +251,7 @@ reduced rate as "6% btw"). No keyword is targeted by more than one page.
 | **P1** Home | badkamer renoveren Antwerpen | badkamerrenovatie Antwerpen, badkamer verbouwen Antwerpen, badkamer laten renoveren, badkamerspecialist Antwerpen | sloopwerk, leidingwerk, waterdichting, tegelwerk, sanitair, inloopdouche, ventilatie, vloerverwarming, afwerking, rijhuis, herenhuis, appartement, VME/syndicus | Local + commercial | Antwerpen, (districten: Deurne, Berchem, Borgerhout, Merksem, Wilrijk, Antwerpen-Zuid, Antwerpen-Noord) | Wat kost een badkamerrenovatie in Antwerpen? Hoe lang duurt het? Heb ik een vergunning nodig? |
 | **P2** Diensten | badkamerrenovatie diensten Antwerpen | complete badkamerrenovatie, badkamer deelrenovatie, badkamer upgraden, badkamerontwerp, sanitair vervangen, tegelwerk vernieuwen | volledige renovatie vs deelrenovatie, projectverloop, materiaalkeuze, prijsbepalende factoren, planning, oplevering | Commercial investigation | Antwerpen | Wat valt onder een complete renovatie? Kan ik alleen de douche laten vervangen? |
 | **P6** Toilet renovatie | toilet renoveren Antwerpen | toiletrenovatie Antwerpen, wc renoveren, gastentoilet renoveren, inbouwreservoir plaatsen, hangtoilet plaatsen | inbouwreservoir, hangtoilet, fonteintje, tegelwerk klein oppervlak, ventilatie, vloerafwerking, combineren met badkamer | Commercial + local | Antwerpen | Wat kost een toilet renoveren? Kan het samen met de badkamer? Hoe lang duurt een toiletrenovatie? |
-| **P3** Over ons | badkamerrenovatie Antwerpen ervaring | wie voert de werken uit, vast team badkamer, Avant Garde Afbouw, gecertificeerd tegelwerk | operator-identiteit, vakmensen, kwalificaties, verzekering, waarborg/garantie, werkwijze, één aanspreekpunt | Trust / commercial investigation | Antwerpen | Wie doet het werk? Zijn jullie verzekerd? Welke garantie geven jullie? |
+| **P3** Over ons | badkamerrenovatie Antwerpen ervaring | wie voert de werken uit, vast team badkamer, Badkamer Verbouwen, gecertificeerd tegelwerk | operator-identiteit, vakmensen, kwalificaties, verzekering, waarborg/garantie, werkwijze, één aanspreekpunt | Trust / commercial investigation | Antwerpen | Wie doet het werk? Zijn jullie verzekerd? Welke garantie geven jullie? |
 | **P4** FAQ | badkamerrenovatie Antwerpen vragen | badkamerrenovatie prijs Antwerpen, badkamerrenovatie duur, vergunning badkamer Antwerpen, btw 6% renovatie, badkamer renoveren appartement | prijsdrijvers, doorlooptijd, stedenbouwkundige melding/vergunning, VME-reglement + syndicus, 6% vs 21% btw, asbestattest, bewoonbaarheid tijdens werken, waterdichtingsgarantie | Informational (pre-purchase) | Antwerpen | Heb ik een vergunning nodig? Geldt 6% btw? Mag ik in mijn appartement zomaar renoveren? Kan ik de badkamer gebruiken tijdens de werken? |
 | **P5** Contact | badkamerrenovatie Antwerpen contact | offerte badkamer Antwerpen, plaatsbezoek badkamer, afspraak badkamerrenovatie | NAP, bereikbaarheid, responstijd, offertetraject, werfzone/parkeren stad Antwerpen | Transactional / local | Antwerpen | Hoe vraag ik een offerte aan? Hoe snel krijg ik antwoord? |
 
@@ -323,7 +323,7 @@ correctly if the marker is simply deleted (i.e. no claim is load-bearing).
 - One consistent `Organization` node, `@id` `https://badkamerrenovatie.montegava.com/#organization`, `name` "Badkamer Renovatie Antwerpen", `inLanguage` `nl-BE`
 - No "5.0", "500+", "15+ jaar", "gecertificeerd", "beste/nummer 1" unless a `[FACT REQUIRED]` marker is filled with a citable source
 - NAP used verbatim wherever it appears:
-  - **Badkamer Renovatie Antwerpen** — onderdeel van Avant Garde Afbouw
+  - **Badkamer Renovatie Antwerpen** — onderdeel van Badkamer Verbouwen
   - `[FACT REQUIRED FROM BUSINESS OWNER: bevestig het vestigings-/correspondentieadres in Antwerpen. De site vermeldt nu "Van Lissumstraat 45, 2100 Antwerpen" (Deurne) — bevestig of dit een echt kantoor-/werkadres is, anders vervangen door een correct adres of weglaten.]`
   - Tel. +32 491 98 02 72 · e-mail info@badkamerrenovatie.montegava.com
   - Openingsuren: maandag–zaterdag, 8.00–17.00 `[FACT REQUIRED: bevestig openingsuren; de site zegt nu ma–zo 8–17 u]`
@@ -472,12 +472,12 @@ Wil u weten wat er mogelijk is voor uw badkamer en wat het ongeveer kost? Vraag 
 [Primaire knop: **Plaatsbezoek aanvragen** → /contact/] · Of bel [+32 491 98 02 72](tel:+32491980272)
 
 **Footer-tagline (vervangt "Meer dan 15 jaar … 500+ projecten"):**
-Badkamer Renovatie Antwerpen — onderdeel van Avant Garde Afbouw. Uw badkamer en toilet volledig gerenoveerd door één vast team, in Antwerpen en omliggende districten. `[FACT REQUIRED FROM BUSINESS OWNER: als u een verifieerbaar aantal afgeronde badkamerprojecten in de regio Antwerpen wil vermelden, geef dat cijfer en het startjaar door; anders blijft deze tekst zonder cijfers.]`
+Badkamer Renovatie Antwerpen — onderdeel van Badkamer Verbouwen. Uw badkamer en toilet volledig gerenoveerd door één vast team, in Antwerpen en omliggende districten. `[FACT REQUIRED FROM BUSINESS OWNER: als u een verifieerbaar aantal afgeronde badkamerprojecten in de regio Antwerpen wil vermelden, geef dat cijfer en het startjaar door; anders blijft deze tekst zonder cijfers.]`
 
 #### E. Conversion optimisation
 - **Primary CTA:** "Plaatsbezoek aanvragen" (repeated: hero, after "Zo verloopt uw renovatie", closing section)
 - **Secondary CTA:** phone-click `tel:` link; "Bekijk onze diensten"
-- **Trust elements (claim-safe):** the scope list, the named sequence, "één ploeg / één aanspreekpunt", operator disclosed (Avant Garde Afbouw), full NAP + KBO once supplied, warranty term once supplied. Add a real project strip / named reviews only when material exists.
+- **Trust elements (claim-safe):** the scope list, the named sequence, "één ploeg / één aanspreekpunt", operator disclosed (Badkamer Verbouwen), full NAP + KBO once supplied, warranty term once supplied. Add a real project strip / named reviews only when material exists.
 - **Objection handling on-page:** cost ("wat bepaalt de prijs"), disruption ("badkamer gebruiken tijdens de werken"), trust ("wie voert de werken uit"), apartment rules (local-fit block).
 - **Contact opportunities:** hero, mid-page, footer, sticky header button, phone link.
 - **Social proof placement:** directly under the sequence section *if/when* real — 2–3 attributable reviews with first name + district + month/year, or a link to a Google Business Profile.
@@ -490,7 +490,7 @@ Badkamer Renovatie Antwerpen — onderdeel van Avant Garde Afbouw. Uw badkamer e
 #### G. Structured data
 - `WebPage` (`@id` `…/#webpage`, `isPartOf` `…/#website`, `inLanguage` `nl-BE`, `about` `…/#organization`)
 - `WebSite` (`@id` `…/#website`, `name` "Badkamer Renovatie Antwerpen")
-- `Organization` (`@id` `…/#organization`, `name`, `url`, `logo`, `telephone` `+32491980272`, `email`, `areaServed` "Antwerpen", `parentOrganization` { `name`: "Avant Garde Afbouw" }) — **no** `aggregateRating`/`review` unless `[FACT REQUIRED: koppel een echte reviewbron (bv. Google Bedrijfsprofiel-URL) met echte beoordelingen]` is filled
+- `Organization` (`@id` `…/#organization`, `name`, `url`, `logo`, `telephone` `+32491980272`, `email`, `areaServed` "Antwerpen", `parentOrganization` { `name`: "Badkamer Verbouwen" }) — **no** `aggregateRating`/`review` unless `[FACT REQUIRED: koppel een echte reviewbron (bv. Google Bedrijfsprofiel-URL) met echte beoordelingen]` is filled
 - `BreadcrumbList` (Home)
 - `FAQPage` — **only** the 4 questions actually shown on the page, `text` matching the visible answers verbatim
 - Consider `LocalBusiness` (subtype `HomeAndConstructionBusiness`) instead of plain `Organization` **once** a real street address + KBO is confirmed; until then keep `Organization` to avoid asserting a `LocalBusiness` address that may not be real.
@@ -627,12 +627,12 @@ Vertel ons kort wat u van plan bent, dan plannen we een gratis plaatsbezoek in.
 - **Primary topic:** who runs and does the work, and how they work
 - **Primary keyword:** over Badkamer Renovatie Antwerpen (brand); secondary: badkamerrenovatie Antwerpen ervaring / wie voert de werken uit
 - **Conversion goal:** move a warm visitor to P5
-- **UVP:** a bathroom renovation run by a finishing contractor (Avant Garde Afbouw) whose core trades *are* tiling, screed and underfloor heating — the parts of a bathroom that fail when done badly
+- **UVP:** a bathroom renovation run by a finishing contractor (Badkamer Verbouwen) whose core trades *are* tiling, screed and underfloor heating — the parts of a bathroom that fail when done badly
 - **Differentiation:** honest about what the company is and is not; real people and qualifications instead of a counter animation
 
 #### B. Recommended structure
 1. `<h1>` **Over Badkamer Renovatie Antwerpen**
-2. `<h2>` Wie wij zijn — operator (Avant Garde Afbouw), what we focus on, since when in Antwerp
+2. `<h2>` Wie wij zijn — operator (Badkamer Verbouwen), what we focus on, since when in Antwerp
 3. `<h2>` Waarom een afbouwbedrijf uw badkamer doet — tegelwerk/chape/vloerverwarming as core trades
 4. `<h2>` Ons team — named people / roles / qualifications `[FACT REQUIRED]`
 5. `<h2>` Hoe wij werken — one contact point, fixed crew, written planning, clean site
@@ -641,7 +641,7 @@ Vertel ons kort wat u van plan bent, dan plannen we een gratis plaatsbezoek in.
 
 #### C. SEO elements
 - **SEO title:** `Over ons | Badkamer Renovatie Antwerpen` (39)
-- **Meta description:** `Badkamer Renovatie Antwerpen is onderdeel van afbouwbedrijf Avant Garde Afbouw. Lees wie de werken uitvoert, hoe we werken en welke waarborg u krijgt.` (150)
+- **Meta description:** `Badkamer Renovatie Antwerpen is onderdeel van afbouwbedrijf Badkamer Verbouwen. Lees wie de werken uitvoert, hoe we werken en welke waarborg u krijgt.` (150)
 - **H1:** Over Badkamer Renovatie Antwerpen
 - **Canonical:** `https://badkamerrenovatie.montegava.com/over-ons/`
 - **OG title/description:** as above
@@ -652,7 +652,7 @@ Vertel ons kort wat u van plan bent, dan plannen we een gratis plaatsbezoek in.
 
 **H2: Wie wij zijn**
 
-Badkamer Renovatie Antwerpen is onderdeel van **Avant Garde Afbouw**, een afbouwbedrijf gespecialiseerd in renovatiewerk voor particulieren en bedrijven. Onder deze naam voeren wij volledige en gedeeltelijke badkamer- en toiletrenovaties uit in Antwerpen en de omliggende districten. `[FACT REQUIRED FROM BUSINESS OWNER: sinds welk jaar voert u badkamerrenovaties uit in de regio Antwerpen? Vermeld een jaartal in plaats van "al jaren".]`
+Badkamer Renovatie Antwerpen is onderdeel van **Badkamer Verbouwen**, een afbouwbedrijf gespecialiseerd in renovatiewerk voor particulieren en bedrijven. Onder deze naam voeren wij volledige en gedeeltelijke badkamer- en toiletrenovaties uit in Antwerpen en de omliggende districten. `[FACT REQUIRED FROM BUSINESS OWNER: sinds welk jaar voert u badkamerrenovaties uit in de regio Antwerpen? Vermeld een jaartal in plaats van "al jaren".]`
 
 **H2: Waarom een afbouwbedrijf uw badkamer renoveert**
 
@@ -694,7 +694,7 @@ Wil u weten of we bij uw project passen? Vraag een gratis plaatsbezoek aan; dan 
 
 #### G. Structured data
 - `AboutPage` (or `WebPage`) + `BreadcrumbList` (Home › Over ons)
-- `Organization` node consistent with other pages; add `parentOrganization` {"@type":"Organization","name":"Avant Garde Afbouw"}
+- `Organization` node consistent with other pages; add `parentOrganization` {"@type":"Organization","name":"Badkamer Verbouwen"}
 - `inLanguage` `nl-BE`
 - Add `employee`/`founder` to `Organization` **only** when real names are supplied
 
@@ -923,7 +923,7 @@ Vertel ons kort wat u wil, dan plannen we een gratis plaatsbezoek.
 Do now (no legal judgement needed):
 - `<html lang="nl-BE">`, `og:locale` `nl_BE`, absolute canonical, keep `noindex, follow`.
 - Fix the `<title>` casing: "privacy policy" → "Privacybeleid".
-- Replace the stray entity names ("Badkamer Renovatie Centrum", any "Amsterdam") with "Badkamer Renovatie Antwerpen (onderdeel van Avant Garde Afbouw)".
+- Replace the stray entity names ("Badkamer Renovatie Centrum", any "Amsterdam") with "Badkamer Renovatie Antwerpen (onderdeel van Badkamer Verbouwen)".
 - Fix `Antwerpen<woord>` concatenations and mojibake.
 - Replace `[01-01-2024]` placeholder with a real "laatst bijgewerkt" date on publication.
 - Insert the correct identity/contact block (NAP + `[FACT REQUIRED: KBO- en btw-BE-nummer]`, verwerkingsverantwoordelijke, contact-e-mail voor privacyverzoeken).
@@ -956,7 +956,7 @@ per district.
 |--------|--------|-------|
 | One "Werkgebied" block (P1) | Plain-text list: Antwerpen-stad, Deurne, Berchem, Borgerhout, Merksem, Wilrijk, Ekeren, Hoboken, Antwerpen-Noord, Antwerpen-Zuid. One line on werfzone/parking logistics. No outbound links. | Done in rebuild |
 | Google Bedrijfsprofiel (Business Profile) | Create/claim, category "Aannemer badkamerrenovatie" / "Badkamervernieuwer", real address or service-area listing, real photos, link to `/`. This is the single highest-value local asset and the only legitimate route to a visible star rating. | `[FACT REQUIRED: does a GBP exist? If yes, URL; if no, create]` |
-| NAP consistency | Exact same name / address / phone on P1, P5, footer, schema, GBP, and any directory. Decide the canonical legal name (with "onderdeel van Avant Garde Afbouw"). | `[FACT REQUIRED: confirm address + KBO]` |
+| NAP consistency | Exact same name / address / phone on P1, P5, footer, schema, GBP, and any directory. Decide the canonical legal name (with "onderdeel van Badkamer Verbouwen"). | `[FACT REQUIRED: confirm address + KBO]` |
 | Belgian directories | Trustoo/Bobex/Livios-type lead platforms, UNIZO member listing if applicable, Google. Only list once NAP + KBO are fixed. | Owner |
 | Reviews process | Ask every completed customer for a Google review; respond to each. No on-site rating claim until GBP has real reviews. | Owner |
 | `areaServed` in schema | "Antwerpen" + district names as `areaServed` on `Organization`/`Service`. | Done in rebuild |
@@ -1085,7 +1085,7 @@ citable backing or be deleted from the rebuilt pages.
 | "Recente Projecten" (6 tiles) | P1 | No metadata | Only with own photos + location + date + scope + (ideally) client consent line |
 
 **Legitimate E-E-A-T signals available now (use these):**
-- Operator disclosed: "onderdeel van Avant Garde Afbouw" (a real finishing
+- Operator disclosed: "onderdeel van Badkamer Verbouwen" (a real finishing
   contractor) — with a concrete, checkable rationale (tiling/screed/underfloor
   heating are its core trades).
 - Transparent process: named work sequence, one contact point, fixed crew,

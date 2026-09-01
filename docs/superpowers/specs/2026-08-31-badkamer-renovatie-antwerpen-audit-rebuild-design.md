@@ -9,7 +9,7 @@ Status: approved (approach B)
 The repo is a static mirror of a WordPress/Elementor site,
 `badkamerrenovatie.montegava.com`, trading as **Badkamer Renovatie Antwerpen**.
 It is one instance of a templated lead-generation microsite network built by
-MONTEGAVA, fronting for **Avant Garde Afbouw**, an Amsterdam finishing/afbouw
+MONTEGAVA, fronting for **Badkamer Verbouwen**, an Amsterdam finishing/afbouw
 contractor (Karspeldreef 1275, 1104 SE Amsterdam; stucwerk, schilderwerk,
 tegelwerk, vloerverwarming). Sibling microsites exist for Deurne, Merksem,
 Borgerhout and Berchem.
@@ -35,7 +35,7 @@ Borgerhout and Berchem.
 
 ### Verifiability problem (central finding)
 
-Avant Garde Afbouw publishes no years-in-business, certifications, warranty
+Badkamer Verbouwen publishes no years-in-business, certifications, warranty
 terms, or review counts, and shows no Antwerp/Belgium presence. Every trust
 claim on the current site — "15+ jaar ervaring", "500+ projecten",
 "5.0 / 500+ tevreden klanten", "gecertificeerd vakmanschap", "garantie",
@@ -58,7 +58,7 @@ KVK 67228275 (Dutch parent, not a Belgian KBO) — is therefore **unverified**.
 | D1 | Target market: **Antwerp, Belgium**. Purge all Amsterdam/Nijmegen traces. |
 | D2 | Deliverable: strategy document **and** rebuilt HTML in this repo. |
 | D3 | Rebuild depth: **B — in-place restructure** within the Elementor framework (fix heading hierarchy, re-order/add/drop sections per new IA, keep styling). |
-| D4 | Facts: default to copy that makes **no unverifiable claim**; insert `[FACT REQUIRED FROM BUSINESS OWNER]` with a precise ask. Infer cautiously from Avant Garde Afbouw only where reasonable. No invented reviews/awards/tenure. |
+| D4 | Facts: default to copy that makes **no unverifiable claim**; insert `[FACT REQUIRED FROM BUSINESS OWNER]` with a precise ask. Infer cautiously from Badkamer Verbouwen only where reasonable. No invented reviews/awards/tenure. |
 | D5 | Analysis prose in English; all rebuilt page copy in Belgian/Flemish Dutch. |
 | D6 | **Do not** build separate neighbourhood pages here (Deurne/Merksem/Borgerhout/Berchem already exist as external microsites — self-cannibalisation). Use one strong "Werkgebied" section and flag network-wide duplicate-content risk. Reversible if the owner confirms the siblings are being retired. |
 | D7 | Create one new real page: `toilet-renovatie-antwerpen/` replacing the broken `toilet-renovatie-nijmegen/` 404. Add a 301-intent note. |
@@ -95,7 +95,7 @@ All 18 sections from the master prompt:
 |------|--------|
 | `index.html` | Rebuild: new hero, restructure sections to new IA, original copy, fix H-hierarchy, rewrite title/meta/OG/JSON-LD, `lang="nl-BE"`, purge claims/contamination, dedupe FAQ (keep 3–4 home-level Q's linking to `/faq`). |
 | `diensten/index.html` | Rebuild: single `<h1>`, original service explanations with real process detail, remove verbatim repetition with home, `Service` + `BreadcrumbList` schema. |
-| `over-ons/index.html` | Rebuild: honest story (Avant Garde Afbouw as operator, Antwerp focus), remove "500+ / 15+ jaar" unless `[FACT REQUIRED]` filled, real process, team `[FACT REQUIRED]`. |
+| `over-ons/index.html` | Rebuild: honest story (Badkamer Verbouwen as operator, Antwerp focus), remove "500+ / 15+ jaar" unless `[FACT REQUIRED]` filled, real process, team `[FACT REQUIRED]`. |
 | `faq/index.html` | Rebuild: single `<h1>`, Antwerp-relevant Q's (permits/VvE/appartementen/bereikbaarheid/BTW 6% vs 21%), valid `FAQPage` schema matching visible text, no duplication of home FAQ wording. |
 | `contact/index.html` | Rebuild: fix Amsterdam schema → Antwerp `LocalBusiness`, correct NAP, hours, form labels to Dutch, add `[FACT REQUIRED]` for KBO/BTW-BE, map. |
 | `toilet-renovatie-antwerpen/index.html` | **New** real page (replaces Nijmegen 404). Own strategy, structure, schema. Update all footer links. |

@@ -10,7 +10,7 @@
 
 ## Global Constraints
 
-- Target market: **Antwerp, Belgium**. No Amsterdam/Nijmegen/Lent/Wijchen/Beuningen/Groesbeek/Arnhem/De Pijp/IJburg references outside intentional context (e.g. naming Avant Garde Afbouw's real Amsterdam HQ in the audit).
+- Target market: **Antwerp, Belgium**. No Amsterdam/Nijmegen/Lent/Wijchen/Beuningen/Groesbeek/Arnhem/De Pijp/IJburg references outside intentional context (e.g. naming Badkamer Verbouwen's real Amsterdam HQ in the audit).
 - Analysis prose: **English**. All rebuilt page copy: **Belgian/Flemish Dutch**.
 - `lang="nl-BE"`, `og:locale="nl_BE"` on every rebuilt page.
 - Canonicals: absolute `https://badkamerrenovatie.montegava.com/<path>/`.
@@ -94,7 +94,7 @@ grep -rniE "15\+? *jaar|500\+|5\.0|gecertificeerd|KVK" --include=*.html .
 
 - [ ] **Step 1: Write header + §1 Executive Summary**
 
-3–5 short paragraphs: what the site is, the network/contamination problem, the verifiability problem (operator = Avant Garde Afbouw, Amsterdam afbouw contractor, no Antwerp track record published), the recommended path (rebuild for genuine Antwerp relevance, strip unverifiable claims), expected outcome.
+3–5 short paragraphs: what the site is, the network/contamination problem, the verifiability problem (operator = Badkamer Verbouwen, Amsterdam afbouw contractor, no Antwerp track record published), the recommended path (rebuild for genuine Antwerp relevance, strip unverifiable claims), expected outcome.
 
 - [ ] **Step 2: Write §2 Current Website Risk Assessment**
 
@@ -146,7 +146,7 @@ git commit -m "Add audit sections 1-7: risk, inventory, similarity, IA, keyword 
 
 - [ ] **Step 2: Diensten (`P2`)** — A–G. Single H1 `Onze diensten voor badkamerrenovatie in Antwerpen`. D: three services with real substance (what's included, typical sequence, decisions the client makes, what affects price) — no verbatim reuse of the home wording. G: `Service` × n + `BreadcrumbList`.
 
-- [ ] **Step 3: Over ons (`P3`)** — A–G. Honest narrative: operated by Avant Garde Afbouw (afbouwspecialist, tegelwerk/vloerverwarming/stucwerk core competencies — a legitimate strength for bathroom work), focus on Antwerp, how the team works. `[FACT REQUIRED]` markers for: year first Antwerp project, number of Antwerp bathrooms completed, team names/roles, vakman qualifications, warranty length. No "500+/15 jaar" unless filled.
+- [ ] **Step 3: Over ons (`P3`)** — A–G. Honest narrative: operated by Badkamer Verbouwen (afbouwspecialist, tegelwerk/vloerverwarming/stucwerk core competencies — a legitimate strength for bathroom work), focus on Antwerp, how the team works. `[FACT REQUIRED]` markers for: year first Antwerp project, number of Antwerp bathrooms completed, team names/roles, vakman qualifications, warranty length. No "500+/15 jaar" unless filled.
 
 - [ ] **Step 4: FAQ (`P4`)** — A–G. Single H1. 8–10 Antwerp-relevant Q&A, distinct wording from home: BTW 6% vs 21% (renovatie woning >10 jaar), stedenbouwkundige vergunning / melding voor badkamer, appartement + VME-reglement + syndicus toestemming, bereikbaarheid smalle straten / parkeervergunning werfzone stad Antwerpen, asbestattest (woningen < 2001 bij verkoop / sloop), duur, kan de badkamer gebruikt worden, waterdichtheid/garantie, wat kost het (ranges only if `[FACT REQUIRED]` filled — else explain drivers). G: `FAQPage` matching visible text exactly.
 
@@ -180,7 +180,7 @@ git commit -m "Add audit section 8: full page-by-page rebuild content (Dutch cop
 
 - [ ] **Step 4: §12 UX & Conversion** — per-page: is purpose clear, is CTA obvious, is trust sufficient, scannability, mobile, buried info. Concrete fixes.
 
-- [ ] **Step 5: §13 Trust / E-E-A-T** — the core recommendation: supply real proof or remove claims. Enumerate every current claim and its status. List legitimate signals available now (Avant Garde Afbouw tegel/vloerverwarming competency, KVK of parent, transparent process, clear NAP) vs. `[FACT REQUIRED]` signals (named reviews + source, project photos with location/date, warranty in writing, KBO registration, team bios, insurance).
+- [ ] **Step 5: §13 Trust / E-E-A-T** — the core recommendation: supply real proof or remove claims. Enumerate every current claim and its status. List legitimate signals available now (Badkamer Verbouwen tegel/vloerverwarming competency, KVK of parent, transparent process, clear NAP) vs. `[FACT REQUIRED]` signals (named reviews + source, project photos with location/date, warranty in writing, KBO registration, team bios, insurance).
 
 - [ ] **Step 6: §14 Content Gaps** — missing commercial pages, informational content, trust content, local content, conversion content — each prioritized by business value × intent × usefulness × ranking realism.
 
@@ -365,7 +365,7 @@ Sitemap: https://badkamerrenovatie.montegava.com/sitemap.xml
 
 ```
 python -c "import xml.dom.minidom;xml.dom.minidom.parse('sitemap.xml')" && echo "sitemap OK"
-grep -rni "nijmegen\|amsterdam" --include=*.html . | grep -v "Avant Garde Afbouw\|Karspeldreef"   # expect none
+grep -rni "nijmegen\|amsterdam" --include=*.html . | grep -v "Badkamer Verbouwen\|Karspeldreef"   # expect none
 ```
 
 - [ ] **Step 6: Commit** `git commit -m "Add robots.txt + sitemap.xml; unify Organization schema; fix image captions"`
