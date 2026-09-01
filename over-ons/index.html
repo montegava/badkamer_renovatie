@@ -664,6 +664,89 @@
       }
       /** End Block Kit CSS: 143-3-7969bb877702491bc5ca272e536ada9d **/
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/v4-shims.min.css" />
+    <style id="bra-floating-cta-css">
+      .bra-floating-cta {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        transition:
+          opacity 0.25s ease,
+          transform 0.25s ease,
+          visibility 0.25s ease;
+      }
+      .bra-floating-cta.is-hidden {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(16px);
+        pointer-events: none;
+      }
+      .bra-floating-cta a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 12px 18px;
+        border-radius: 999px;
+        font-family: sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.2px;
+        line-height: 1;
+        color: #ffffff;
+        text-decoration: none;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition:
+          transform 0.15s ease,
+          box-shadow 0.15s ease;
+      }
+      .bra-floating-cta a:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+      }
+      .bra-floating-cta a i {
+        font-size: 16px;
+        line-height: 1;
+      }
+      .bra-floating-cta .bra-fcta-whatsapp {
+        background: #25d366;
+      }
+      .bra-floating-cta .bra-fcta-call {
+        background: #f1b12b;
+        color: #1a1a1a;
+      }
+      @media (max-width: 767px) {
+        .bra-floating-cta {
+          left: 0;
+          right: 0;
+          bottom: 0;
+          flex-direction: row;
+          gap: 0;
+        }
+        .bra-floating-cta a {
+          flex: 1;
+          border-radius: 0;
+          padding: 14px 10px;
+          box-shadow: none;
+        }
+        .bra-floating-cta a:hover {
+          transform: none;
+        }
+        body {
+          padding-bottom: 52px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .bra-floating-cta a {
+          transition: none;
+        }
+      }
+    </style>
   </head>
   <body
     class="wp-singular page-template page-template-elementor_header_footer page page-id-13 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor hello-elementor-default elementor-default elementor-template-full-width elementor-kit-22 elementor-page elementor-page-13"
@@ -2264,6 +2347,36 @@
       id="pro-elements-handlers-js"
     ></script>
     <script data-category="functional"></script>
+    <div class="bra-floating-cta" aria-label="Snel contact">
+      <a class="elementor-button bra-fcta-whatsapp" href="https://wa.me/32491980272" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i><span>WhatsApp</span>
+      </a>
+      <a class="elementor-button bra-fcta-call" href="tel:+32491980272">
+        <i class="fa fa-phone" aria-hidden="true"></i><span>Bellen</span>
+      </a>
+    </div>
+    <script id="bra-floating-cta-js">
+      (function () {
+        var cta = document.querySelector(".bra-floating-cta");
+        var footer = document.querySelector("footer");
+        if (!cta || !footer) return;
+        var ticking = false;
+        function update() {
+          ticking = false;
+          // Hidden only while the footer is in view; shown again as soon as you scroll back up.
+          var atEnd = footer.getBoundingClientRect().top < window.innerHeight;
+          cta.classList.toggle("is-hidden", atEnd);
+        }
+        function onScrollOrResize() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(update);
+        }
+        window.addEventListener("scroll", onScrollOrResize, { passive: true });
+        window.addEventListener("resize", onScrollOrResize, { passive: true });
+        update();
+      })();
+    </script>
   </body>
 </html>
 <!-- WP Fastest Cache file was created in 1.998 seconds, on 13/07/2026 @ 8:49 am --><!-- via php -->

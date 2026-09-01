@@ -4116,17 +4116,21 @@
         var cta = document.querySelector(".bra-floating-cta");
         var footer = document.querySelector("footer");
         if (!cta || !footer) return;
-        if ("IntersectionObserver" in window) {
-          new IntersectionObserver(function (entries) {
-            cta.classList.toggle("is-hidden", entries[0].isIntersecting);
-          }).observe(footer);
-        } else {
-          var onScroll = function () {
-            cta.classList.toggle("is-hidden", footer.getBoundingClientRect().top < window.innerHeight);
-          };
-          window.addEventListener("scroll", onScroll, { passive: true });
-          onScroll();
+        var ticking = false;
+        function update() {
+          ticking = false;
+          // Hidden only while the footer is in view; shown again as soon as you scroll back up.
+          var atEnd = footer.getBoundingClientRect().top < window.innerHeight;
+          cta.classList.toggle("is-hidden", atEnd);
         }
+        function onScrollOrResize() {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(update);
+        }
+        window.addEventListener("scroll", onScrollOrResize, { passive: true });
+        window.addEventListener("resize", onScrollOrResize, { passive: true });
+        update();
       })();
     </script>
   </body>
