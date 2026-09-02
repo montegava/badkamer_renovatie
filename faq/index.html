@@ -622,6 +622,18 @@
       .envato-kit-140-faq .elementor-accordion .elementor-accordion-item {
         border-width: 0 0 1px !important;
       }
+      /* Accordion titles inherit the global "primary" heading typography
+         (used for large hero headings), which is far too big for FAQ
+         questions and overflows on mobile. Force a sane, readable size. */
+      .elementor-element-96a59d0 .elementor-accordion-title {
+        font-size: 1.15rem !important;
+        line-height: 1.4 !important;
+      }
+      @media (max-width: 767px) {
+        .elementor-element-96a59d0 .elementor-accordion-title {
+          font-size: 1rem !important;
+        }
+      }
       /* Scrollable Columns */
       .envato-kit-140-scrollable {
         height: 100%;
