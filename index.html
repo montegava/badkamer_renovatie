@@ -3170,11 +3170,13 @@
                 data-widget_type="form.default"
               >
                 <div class="elementor-widget-container">
-                  <form class="elementor-form" method="post" name="Register Form" aria-label="Register Form">
-                    <input type="hidden" name="post_id" value="11" />
-                    <input type="hidden" name="form_id" value="f8226fc" />
-                    <input type="hidden" name="referer_title" value="Badkamer renoveren in Antwerpen" />
-                    <input type="hidden" name="queried_id" value="11" />
+                  <form
+                    id="bra-whatsapp-form-f8226fc"
+                    class="elementor-form"
+                    method="post"
+                    name="Register Form"
+                    aria-label="Register Form"
+                  >
                     <div class="elementor-form-fields-wrapper elementor-labels-">
                       <div
                         class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-name elementor-col-100 elementor-field-required"
@@ -3191,38 +3193,7 @@
                         />
                       </div>
                       <div
-                        class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-Telefoonnummer elementor-col-50 elementor-field-required"
-                      >
-                        <label for="form-field-Telefoonnummer" class="elementor-field-label elementor-screen-only">
-                          Telefoon
-                        </label>
-                        <input
-                          size="1"
-                          type="text"
-                          name="form_fields[Telefoonnummer]"
-                          id="form-field-Telefoonnummer"
-                          class="elementor-field elementor-size-sm elementor-field-textual"
-                          placeholder="Uw telefoon"
-                          required="required"
-                        />
-                      </div>
-                      <div
-                        class="elementor-field-type-email elementor-field-group elementor-column elementor-field-group-email elementor-col-50"
-                      >
-                        <label for="form-field-email" class="elementor-field-label elementor-screen-only">
-                          E-mail
-                        </label>
-                        <input
-                          size="1"
-                          type="email"
-                          name="form_fields[email]"
-                          id="form-field-email"
-                          class="elementor-field elementor-size-sm elementor-field-textual"
-                          placeholder="Uw Email"
-                        />
-                      </div>
-                      <div
-                        class="elementor-field-type-textarea elementor-field-group elementor-column elementor-field-group-message elementor-col-100"
+                        class="elementor-field-type-textarea elementor-field-group elementor-column elementor-field-group-message elementor-col-100 elementor-field-required"
                       >
                         <label for="form-field-message" class="elementor-field-label elementor-screen-only">
                           Bericht
@@ -3233,6 +3204,7 @@
                           id="form-field-message"
                           rows="4"
                           placeholder="Uw bericht"
+                          required="required"
                         ></textarea>
                       </div>
                       <div
@@ -3258,6 +3230,17 @@
                       </div>
                     </div>
                   </form>
+                  <script>
+                    (function () {
+                      var form = document.getElementById("bra-whatsapp-form-f8226fc");
+                      if (!form) return;
+                      form.addEventListener("submit", function (e) {
+                        e.preventDefault();
+                        var message = form.querySelector('[name="form_fields[message]"]').value.trim();
+                        window.location.href = "https://wa.me/32491980272?text=" + encodeURIComponent(message);
+                      });
+                    })();
+                  </script>
                 </div>
               </div>
               <div
